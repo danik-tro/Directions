@@ -1,2 +1,4 @@
+from directions import direction
+
 if __name__ == "__main__":
-    print("Hello, world!")
+    print(direction("W", 45))

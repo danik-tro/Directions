@@ -23,14 +23,14 @@ test: virtual_env  ## Run tests
 
 coverage: virtual_env  ## Run tests with coverage - load config from tests/config.yaml
 	. ve/bin/activate; pip install --exists-action w -Ur requirements/dev.txt
-	. ve/bin/activate; python -m pytest -vv --cov=application tests/ --no-cov-on-fail --tb=no tests/
+	. ve/bin/activate; python -m pytest -vv --cov=directions tests/ --no-cov-on-fail --tb=no tests/
 
 # Code style
 lint: virtual_env ## Run linter (flake8)
 	. ve/bin/activate; flake8
 
 mypy: virtual_env ## Run mypy
-	. ve/bin/activate; mypy ./application
+	. ve/bin/activate; mypy ./directions
 
 black: virtual_env ## Run isort and black
 	. ve/bin/activate; isort $(FILE_TO_BLACK); black $(FILE_TO_BLACK)
